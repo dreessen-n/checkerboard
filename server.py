@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def create_board():
-    return render_template('index.html', num1=8, num2=8, color1='white', color2='black')
+    return render_template('index.html', num1=8, num2=8, color1='NavajoWhite', color2='black')
 
 # Error message for 404
 @app.errorhandler(404)
