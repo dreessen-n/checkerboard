@@ -9,10 +9,14 @@
 </head>
 <body>
     <h1 style="background-color: {{ color2 }}; color: {{ color1 }};">*** Checkerboard ***</h1>
+    <!-- Create board -->
     <div class="wrapper">
+        <!-- Create loop for number of rows -->
         {% for r in range(0, num1) %}
+            <!-- Use mod to alternate rows start color -->
             {% if r % 2 == 0 %}
                 <div class="row">
+                    <!-- Create loop for number of boxes in rows (aka col) -->
                     {% for c in range(0, num2) %}
                         {% if c % 2 == 0 %}
                             <div class="box" style="background-color: {{ color2 }};"></div>
@@ -34,13 +38,6 @@
             {% endif %}
         {% endfor %}
     </div>
-
-
-
-
-
-
-
 
     <script type="text/javascript" src="{{ url_for('static', filename='/js/script.js') }}"></script>
 </body>
