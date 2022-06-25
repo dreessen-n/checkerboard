@@ -18,6 +18,7 @@
                 <div class="row">
                     <!-- Create loop for number of boxes in rows (aka col) -->
                     {% for c in range(0, num2) %}
+                    <!-- Use mod to alternate box colors in row -->
                         {% if c % 2 == 0 %}
                             <div class="box" style="background-color: {{ color2 }};"></div>
                         {% else %}
