@@ -4,7 +4,23 @@ app = Flask(__name__)
 
 @app.route('/')
 def create_board():
-    return render_template('index.html', num1=8, num2=8, color1='NavajoWhite', color2='black')
+    return render_template('index.html', num1=8, num2=8, color1='red', color2='black')
+
+@app.route('/<int:num1>')
+def create_board_row(num1):
+    return render_template('index.html', num1=num1, num2=8, color1='red', color2='black')
+
+@app.route('/<int:num1>/<int:num2>')
+def create_board_row_column(num1, num2):
+    return render_template('index.html', num1=num1, num2=num2, color1='red', color2='black')
+
+@app.route('/<int:num1>/<int:num2>/<string:color1>')
+def create_board_row_column_color1(num1, num2, color1):
+    return render_template('index.html', num1=num1, num2=num2, color1=color1, color2='black')
+
+@app.route('/<int:num1>/<int:num2>/<string:color1>/<string:color2>')
+def create_board_row_column_color1_color2(num1, num2, color1, color2):
+    return render_template('index.html', num1=num1, num2=num2, color1=color1, color2=color2)
 
 # Error message for 404
 @app.errorhandler(404)
